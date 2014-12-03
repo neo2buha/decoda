@@ -77,6 +77,8 @@ public:
      * Attaches the debugger to the state.
      */
     VirtualMachine* AttachState(unsigned long api, lua_State* L);
+    
+    void VMInitialize(unsigned long api, lua_State* L, VirtualMachine* vm);
 
     /**
      * Detaches the debugger from the state.
@@ -96,7 +98,9 @@ public:
      * was not available for the script. This should be set if the script was encountered
      * through a call other than the load function.
      */
-    unsigned int RegisterScript(lua_State* L, const char* source, size_t size, const char* name, bool unavailable);
+    int RegisterScript(lua_State* L, const char* source, size_t size, const char* name, bool unavailable);
+
+    int RegisterScript(unsigned long api, lua_State* L, lua_Debug* ar);
 
     /**
      * Steps execution of a "broken" script by one line. If the current line
@@ -120,6 +124,8 @@ public:
      * thread.
      */
     void Break();
+
+    void ActiveLuaHookInAllVms();
 
     /**
      * Evalates the expression. If there was an error evaluating the expression the
@@ -149,7 +155,17 @@ public:
      * Toggles a breakpoint on the line on or off.
      */
     void ToggleBreakpoint(lua_State* L, unsigned int scriptIndex, unsigned int line);
+    
+    void BreakpointsActiveForScript(int scriptIndex);
+    
+    /**
+     * Returns whether any loaded script still have any breakpoints set
+     */
+    bool GetHaveActiveBreakpoints();
 
+    void SetHaveActiveBreakpoints(bool breakpointsActive);
+
+    void DeleteAllBreakpoints();
     /**
      * Calls the function on the top of the stack in a protected environment that
      * triggers a debugger exception on error.
@@ -161,7 +177,9 @@ public:
      * name. The name is the same name that was supplied when the script was
      * loaded.
      */
-    unsigned int GetScriptIndex(const char* name) const;
+    int GetScriptIndex(const char* name) const;
+
+    bool StackHasBreakpoint(unsigned long api, lua_State* L);
 
     /**
      * Returns the class name associated with the metatable index. This makes
@@ -225,10 +243,18 @@ private:
          */
         bool GetHasBreakPoint(unsigned int line) const;
         
+        bool HasBreakPointInRange(unsigned int start, unsigned int end) const;
+
+        bool ToggleBreakpoint(unsigned int line);
+
+        bool HasBreakpointsActive();
+
+        void ClearBreakpoints();
+
         std::string                 name;
         std::string                 source;
         std::string                 title;
-        std::vector<bool>           breakpoints;    // True for the indices of lines that have breakpoints.
+        std::vector<unsigned int>   breakpoints;    // Lines that have breakpoints on them.
         std::vector<unsigned int>   validLines;     // Lines that can have breakpoints on them.
 
     };
@@ -379,10 +405,15 @@ private:
         bool            initialized;
         int             callCount;
         int             callStackDepth;
+        int             lastStepLine;
+        int             lastStepScript;
         unsigned long   api;
         std::string     name;
         unsigned int    stackTop;
         bool            luaJitWorkAround;
+        bool            breakpointInStack;
+        bool            haveActiveBreakpoints;
+        std::string     lastFunctions;
     };
 
     struct StackEntry
@@ -509,6 +540,8 @@ private:
      */
     void LogHookEvent(unsigned long api, lua_State* L, lua_Debug* ar);
 
+    void UpdateHookMode(unsigned long api, lua_State* L, lua_Debug* hookEvent);
+
     /**
      * Calls the named meta-method for the specified value. If the value does
      * not have a meta-table or the named meta-method, the function returns false.
@@ -543,7 +576,7 @@ private:
      * Creates a call stack that unifies the native call stack and the script
      * call stack.
      */
-    unsigned int GetUnifiedStack(const StackEntry nativeStack[], unsigned int nativeStackSize,
+    unsigned int GetUnifiedStack(unsigned long api, const StackEntry nativeStack[], unsigned int nativeStackSize,
         const lua_Debug scriptStack[], unsigned int scriptStackSize,
         StackEntry unifiedStack[]);
 
