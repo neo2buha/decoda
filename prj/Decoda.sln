@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtFrontEnd", "QtFrontEnd.vcxproj", "{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Frontend", "Frontend.vcxproj", "{E50A1768-D1D7-7173-FAF0-5F1BE61CA701}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7} = {7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LuaInject", "LuaInject.vcxproj", "{445F405E-B0C9-F4D4-F907-A67A65B1D229}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7} = {7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shared", "Shared.vcxproj", "{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}.Debug|Win32.Build.0 = Debug|Win32
+		{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}.Release|Win32.ActiveCfg = Release|Win32
+		{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}.Release|Win32.Build.0 = Release|Win32
+		{E50A1768-D1D7-7173-FAF0-5F1BE61CA701}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E50A1768-D1D7-7173-FAF0-5F1BE61CA701}.Debug|Win32.Build.0 = Debug|Win32
+		{E50A1768-D1D7-7173-FAF0-5F1BE61CA701}.Release|Win32.ActiveCfg = Release|Win32
+		{E50A1768-D1D7-7173-FAF0-5F1BE61CA701}.Release|Win32.Build.0 = Release|Win32
+		{445F405E-B0C9-F4D4-F907-A67A65B1D229}.Debug|Win32.ActiveCfg = Debug|Win32
+		{445F405E-B0C9-F4D4-F907-A67A65B1D229}.Debug|Win32.Build.0 = Debug|Win32
+		{445F405E-B0C9-F4D4-F907-A67A65B1D229}.Release|Win32.ActiveCfg = Release|Win32
+		{445F405E-B0C9-F4D4-F907-A67A65B1D229}.Release|Win32.Build.0 = Release|Win32
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}.Debug|Win32.Build.0 = Debug|Win32
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}.Release|Win32.ActiveCfg = Release|Win32
+		{7C480CD1-68EA-36A7-51A5-4AFB3DE6BDF7}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

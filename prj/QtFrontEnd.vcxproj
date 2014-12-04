@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EA37CC31-D6EF-0D7F-3FF7-E6DA2BCEA86F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>QtFrontEnd</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\binQt\</OutDir>
+    <IntDir>obj\Debug\QtFrontEnd\</IntDir>
+    <TargetName>DecodaQt</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\binQt\</OutDir>
+    <IntDir>obj\Release\QtFrontEnd\</IntDir>
+    <TargetName>DecodaQt</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtCore;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtGui;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtWidgets;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtOpenGL;GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtCore;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtGui;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtWidgets;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtOpenGL;GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;Qt5OpenGLd.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtCore;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtGui;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtWidgets;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtOpenGL;GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;QT_CORE_LIB;QT_GUI_LIB;QT_WIDGETS_LIB;QT_OPENGL_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtCore;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtGui;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtWidgets;..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\include\QtOpenGL;GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>Qt5Core.lib;Qt5Gui.lib;Qt5Widgets.lib;Qt5OpenGL.lib;OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Qt\Qt5.4.0\5.4\msvc2013_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\FrontendQt\MainWindow.cpp" />
+    <ClCompile Include="..\src\FrontendQt\main.cpp" />
+    <ClCompile Include="GeneratedFiles\moc_MainWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\FrontendQt\MainWindow.h">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/bin/moc "h:/Work/decoda/src/FrontendQt/MainWindow.h" -o "GeneratedFiles/moc_MainWindow.cpp" -D_CRT_SECURE_NO_WARNINGS -DWIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtCore" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtGui" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtWidgets" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtOpenGL" -I"h:/Work/decoda/prj/GeneratedFiles"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">GeneratedFiles/moc_MainWindow.cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc'ing MainWindow.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/bin/moc "h:/Work/decoda/src/FrontendQt/MainWindow.h" -o "GeneratedFiles/moc_MainWindow.cpp" -D_CRT_SECURE_NO_WARNINGS -DWIN32 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_WIDGETS_LIB -DQT_OPENGL_LIB -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtCore" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtGui" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtWidgets" -I"h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/include/QtOpenGL" -I"h:/Work/decoda/prj/GeneratedFiles"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">GeneratedFiles/moc_MainWindow.cpp</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc'ing MainWindow.h</Message>
+    </CustomBuild>
+    <CustomBuild Include="..\src\FrontendQt\MainWindow.ui">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/bin/uic -o "GeneratedFiles/ui_MainWindow.h" "h:/Work/decoda/src/FrontendQt/MainWindow.ui"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">GeneratedFiles/ui_MainWindow.h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic'ing MainWindow.ui</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">h:/Work/Qt/Qt5.4.0/5.4/msvc2013_opengl/bin/uic -o "GeneratedFiles/ui_MainWindow.h" "h:/Work/decoda/src/FrontendQt/MainWindow.ui"</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">GeneratedFiles/ui_MainWindow.h</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic'ing MainWindow.ui</Message>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

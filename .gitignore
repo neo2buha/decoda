@@ -1,4 +1,10 @@
 build/*
 bin/*
+binQt/*
+prj/obj/*
+prj/ipch/*
+prj/*.suo
+prj/*.sdf
+prj/*.user
 install/output/*
 docs/output/*
